@@ -9,8 +9,13 @@
 	background-color: $accent
 	color: #fff
 
+html
+	font-size: 10px
+
 body
-	font-size: 16px
+	background-color: $body-bg
+	padding-top: 4rem
+	font-size: 1.4rem
 	min-width: 320px
 	position: relative
 	line-height: 1.65
@@ -19,7 +24,7 @@ body
 	color: $text
 	input, textarea
 		border: #666 1px solid
-		outline: none
+		outline: none 
 		&:focus:required:invalid
 			border-color: red
 		&:required:valid
@@ -37,6 +42,120 @@ body
 
 b, strong
 	font-weight: bold
+
+ul
+	margin: 0
+	padding: 0
+
+a
+	color: $accent
+
+h2
+	font-size: 2.4rem
+	font-weight: bold
+
+.btn
+	display: inline-block
+	padding: 1.6rem 2.3rem
+	border-radius: 5px
+	transition: all .25s ease
+	position: relative
+	font-weight: bold
+	letter-spacing: .5px
+	&::after
+		content: ''
+		position: absolute
+		width: 100%
+		height: .4rem
+		background-color: rgba(#000, .2)
+		border-radius: 0 0 5px 5px
+		left: 0
+		bottom: 0
+	&:hover, &:focus
+		text-decoration: none
+		&::after
+			background-color: rgba(#000, .1)
+	&.btn-primary
+		background-color: $accent
+		color: #fff
+		&:hover, &:focus
+			color: #fff
+			background-color: lighten($accent, 10%)	
+.top-nav
+	background-color: #fff
+	padding: 15px
+	margin-bottom: 4rem
+	&_menu
+		list-style-type: none
+		li
+			margin-left: 4rem
+			position: relative
+			&:first-child
+				margin-left: 0
+			a
+				
+				text-transform: uppercase
+				text-decoration: none
+				color: $text
+				font-weight: bold
+				&::after
+					content: ''
+					position: absolute
+					display: block
+					width: 100%
+					height: 0
+					border-bottom: .2rem solid $accent
+					left: 0
+					bottom: -27px
+					transform: scale(0)
+					transition: transform .25s ease
+				&:hover, &:focus
+					&::after
+						transform: scale(1)
+.left-sidebar
+	&_menu
+		background-color: #fff
+		list-style-type: none
+		font-size: 1.6rem
+		padding: 
+			top: 1.5rem
+			bottom: 1.5rem
+		li
+			background-color: inherit
+			transition: background-color .25s ease
+			a
+				display: block
+				padding: .7rem 3rem 
+				color: $text
+				text-decoration: none
+				transition: color .25s ease
+				&:hover, &:focus
+					color: #fff
+			&:hover, &:focus
+				background-color: $accent
+	&_object
+		margin-top: 3rem
+		background-color: #fff
+		img
+		&_description
+			padding: 2rem
+			h3
+				text-transform: uppercase
+				font-size: 1.4rem
+			p
+			a
+				display: block
+				text-decoration: underline
+.content
+	p
+	a
+.directions
+	margin-top: 4rem
+	&-block
+
+
+
+
 
 
 
