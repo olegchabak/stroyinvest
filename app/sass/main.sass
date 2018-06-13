@@ -37,8 +37,17 @@ body
 	&.img-width
 		width: 100%
 
+img
+	max-width: 100%
+
+section
+	margin-bottom: 4rem
+	h2
+		margin-bottom: 3rem
+
 .text-center
 	text-align: center
+
 
 b, strong
 	font-weight: bold
@@ -88,7 +97,8 @@ h2
 	position: relative
 	&_menu
 		list-style-type: none
-		display: flex
+		display: flex 
+		justify-content: space-between
 		li
 			margin-right: 4rem
 			position: relative
@@ -138,11 +148,14 @@ h2
 			width: 8px
 			height: 8px
 			border:
-				bottom: 1.5px solid $text
-				right: 1.5px solid $text
+				bottom: 1.5px solid $accent
+				right: 1.5px solid $accent
 			margin-top: -4px
 			transform: rotate(45deg)
 			transition: all .25s ease
+		&.open
+			&::after
+				transform: rotate(225deg)
 	&_menu
 		display: block
 		background-color: #fff
@@ -180,8 +193,23 @@ h2
 .content
 	.btn
 		margin-top: 3rem
+	.team
+		text-align: center
+		h2
+			text-align: initial
+			margin-bottom: 1rem
+		img
+			border-radius: 20px
+			margin-top: 3rem
+		h4
+			margin-top: 15px 
+			font-size: 18px
+			text-align: center
+		p
+			font-size: 13px
+			text-align: center
 .directions
-	margin-top: 8rem
+	margin-top: 4rem
 	h2
 		margin-bottom: 3rem
 		text-align: center
@@ -189,7 +217,7 @@ h2
 		background-color: #fff
 		background-repeat: no-repeat
 		background-position: bottom center
-		background-size: contain
+		background-size: auto
 		height: 22rem
 		text-align: center
 		padding: 2rem 1.5rem
@@ -249,8 +277,6 @@ h2
 					margin-left: initial
 				&:hover, &:focus
 					background-color: rgba(#fff, .2)
-
-
 
 
 

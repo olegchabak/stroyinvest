@@ -1,32 +1,106 @@
 @import "vars"
 
 
+
 /*==========  Desktop First  ==========*/
 
-// ≥1200px
+// ≤1200px (max-width: 1199.98px)
 +media-breakpoint-down(lg)
+	.top-nav
+		&_menu
+			li
+				margin-right: 2rem
 
-// ≥992px
+
+// ≤992px (max-width: 991.98px)
 +media-breakpoint-down(md)
+	.top-nav
+		&_menu
+			margin-top: 2rem
+			li
+				&:first-child
+					margin-left: 2rem
+				a	
+					&:hover, &:focus, &.active
+						&::after
+							bottom: -15px
+	.footer
+		&_menu
+			margin-bottom: 2rem
+		&-contacts
+			text-align: center
 
-// ≥768px
+// ≤768px (max-width: 767.98px)
 +media-breakpoint-down(sm)
+	.top-nav
+		&_menu
+			text-align: right
+			display: none
+			li
+				padding: .3rem
+				a	
+					&::after
+						display: none
+					&:hover, &:focus, &.active
+						color: $accent
+		.hamburger
+			display: block
+	.left-sidebar
+		&_btn
+			display: block
+		&_menu
+			display: none
+		&_object
+			display: none
+	.content
+		margin-top: 4rem
+		.btn
+			margin-top: 3rem
+	.footer
+		ul
+			li
+				margin-top: .5rem
+				&:first-child
+					margin-top: 0
+				&:first-child
+		&_copy
+			margin-bottom: 2rem
+			small
+				margin-top: 1rem
+		&_menu
+			font-size: 1.3rem
 
-// ≥576px
+
+
+// ≤576px (max-width: 575.98px)
 +media-breakpoint-down(xs)
+	body
+		padding-top: 2rem
+	h2
+		text-align: center
+	.top-nav
+		.logo
+			max-width: 80%
+	.content
+		&-btn-container
+			text-align: center
+		.team
+			h2
+				text-align: center
+
 
 
 
 /*==========  Mobile First  ==========*/
 
-// ≤576px
+// ≥576px (min-width: 576px)
 +media-breakpoint-up(sm)
 
-// ≤768px
+// ≥768px (min-width: 768px)
 +media-breakpoint-up(md)
 
-// ≤992px
+// ≥992px (min-width: 992px)
 +media-breakpoint-up(lg)
 
-// ≤1200px
+// ≥1200px (min-width: 1200px)
 +media-breakpoint-up(xl)
