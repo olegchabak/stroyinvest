@@ -95,6 +95,8 @@ h2
 	padding: 15px
 	margin-bottom: 4rem
 	position: relative
+	.logo
+		max-width: 240px
 	&_menu
 		list-style-type: none
 		display: flex 
@@ -199,7 +201,7 @@ h2
 			text-align: initial
 			margin-bottom: 1rem
 		img
-			border-radius: 20px
+			border-radius: 3px
 			margin-top: 3rem
 		h4
 			margin-top: 15px 
@@ -233,6 +235,134 @@ h2
 					margin: 0
 				&:hover, &:focus
 					background-color: lighten($accent, 10%)
+	.structure
+		&-box
+			&_thumb
+				background-color: #fff
+				padding: 25px
+				margin-bottom: 30px
+				h4
+					a
+						color: $accent
+						text-transform: uppercase
+				&_ogrninn
+					text-transform: uppercase
+					color: rgba($text, .6)
+					margin: 0
+				&_description
+					margin-top: 10px
+	.investments
+		&-docs
+			a
+		&-calc
+			margin-top: 4rem
+			&-programms
+				display: flex
+				flex-wrap: wrap
+				margin-bottom: 3rem
+				&_radio
+					margin-bottom: 10px
+					flex-basis: 50%
+					input
+						display: none
+						&:checked
+							&+label::before
+								background-color: $accent
+								border: 7px solid #fff
+					label
+						position: relative
+						cursor: pointer
+						&::before
+							display: inline-block
+							content: ''
+							width: 24px
+							height: 24px
+							border-radius: 50%
+							background-color: #fff
+							border: 7px solid #fff
+							margin-right: 10px
+							vertical-align: text-top
+							box-shadow: 0 2px 5px rgba(0,0,0,0.1)
+							transition: background-color .25s ease
+						span
+							small
+								display: block
+								padding-left: 39px
+								color: rgba($text, .5)
+					&__popular
+						position: absolute
+						padding: 4px 8px
+						background-color: $accent
+						color: #fff
+						font-size: 10px
+						text-transform: uppercase
+						top: 50%
+						transform: translateY(-50%)
+						left: calc(100% + 15px)
+						&::after
+							position: absolute
+							display: block
+							content: ''
+							width: 10px
+							height: 10px
+							background-color: $accent
+							left: -5px
+							top: 50%
+							margin-top: -5px
+							transform: rotate(45deg)
+				&_legal
+					font-size: 11px
+			&-counter
+				h4
+					font-weight: normal
+					font-size: 16px
+				input[type="range"]
+					width: 90%
+				.range-bar
+					margin: 3rem 0
+					.range-quantity
+						background-color: $accent
+				&_invest
+					margin-bottom: 3rem
+					&_label
+					&_num
+						display: inline-block
+						padding: 15px 50px
+						font-size: 16px
+						background-color: #fff
+						margin-left: 25px
+				&_total
+					width: 53%
+					padding: 10px 0
+					text-align: center
+					display: inline-block
+					background-color: #fff
+					strong
+						display: block
+						font-size: 16px
+						color: $accent
+						font-weight: normal
+					small
+						display: block
+						font-size: 10px
+				&_monthly
+					padding: 10px 0
+					width: 45%
+					text-align: center
+					display: inline-block
+					strong
+						display: block
+						font-size: 16px
+						font-weight: normal
+						color: $accent
+					small
+						display: block
+						font-size: 10px
+
+
+
+
+
 
 .directions
 	margin-top: 4rem

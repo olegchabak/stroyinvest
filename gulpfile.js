@@ -38,7 +38,9 @@ gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/slick/slick.min.js',
-		'app/js/common.js', // Always at the end
+		'app/libs/jQuery.equalHeights/jquery.equalheights.min.js',
+		'app/libs/powerange/powerange.min.js',
+		'app/js/common.js' // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
 	// .pipe(uglify()) // Mifify js (opt.)

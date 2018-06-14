@@ -1,5 +1,5 @@
 $(function() {
-	
+
 	// ******* Button mobile menu *******
 	$('#topNavBtn').on('click', function() {
 		$('.hamburger').toggleClass('is-active');
@@ -51,5 +51,36 @@ $(function() {
 	]
 	});
 
+	// **** Power Range + calculator ****
+	var elem = document.querySelector('.calc-range');
+	var init = new Powerange(elem, { 
+		min: 100000, 
+		max: 3000000, 
+		start: 1200000, 
+		step: 100000, 
+		hideRange: true  
+	});
 
+	var input = $('input[name="calc"]:checked');
+	var month = $(input).attr('data-month');
+	var percent = $(input).attr('data-percent');
+	var money = $('.calc-range').val();
+	var result;
+	var total;
+
+	$('.calc-range').on('change', function() {
+		$('.investments-calc-counter_invest_num').text(($(this).val()).replace(/(\d{1,3}(?=(\d{3})+(?:\.\d|\b)))/g,"\$1 ") + ' руб.');
+		
+	});
+
+
+	//*** jQery Equal Heights ***
+	if (screen.width >= 992) {
+		$('.structure-box_thumb').equalHeights();	
+	}
+	
+
+	// ***** Alert TEST*****
+	alert('Содержимое на данном сайте размещено в учебных целях или для тестовых работ и не является офертой!')
+	
 });
