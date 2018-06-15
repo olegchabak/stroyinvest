@@ -50,6 +50,13 @@
 			display: block
 		&_menu
 			display: none
+			font-size: 15px
+			padding: 
+				top: 1rem
+				bottom: 1rem
+			li
+				a
+					padding: .3rem 3rem
 		&_object
 			display: none
 	.content
@@ -74,14 +81,14 @@
 
 // ≤576px (max-width: 575.98px)
 +media-breakpoint-down(xs)
-	body
-		padding-top: 2rem
 	h2
 		text-align: center
 	.top-nav
-		margin-bottom: 2rem
+		margin: 2rem 0
 		.logo
-			max-width: 80%
+			a
+				img
+					max-width: 200px
 	.content
 		&-btn-box
 			text-align: center
@@ -91,7 +98,6 @@
 		.contacts
 			&-social
 				text-align: center
-
 
 
 

@@ -10,13 +10,13 @@
 $slick-font-path: "./fonts/" !default;
 $slick-font-family: "slick" !default;
 $slick-loader-path: "./" !default;
-$slick-arrow-color: lightgray !default;
+$slick-arrow-color: $accent !default;
 $slick-dot-color: black !default;
 $slick-dot-color-active: $slick-dot-color !default;
-$slick-prev-character: "<" !default;
-$slick-next-character: ">" !default;
-$slick-dot-character: "." !default;
-$slick-dot-size: 16px !default;
+$slick-prev-character: "\2190" !default;
+$slick-next-character: "\2192" !default;
+$slick-dot-character: "\2022" !default;
+$slick-dot-size: 7px !default;
 $slick-opacity-default: 0.75 !default;
 $slick-opacity-on-hover: 1 !default;
 $slick-opacity-not-active: 0.25 !default;
@@ -69,19 +69,18 @@ $slick-opacity-not-active: 0.25 !default;
     line-height: 0px;
     font-size: 0px;
     cursor: pointer;
-    background: white;
+    background: transparent;
     border-radius: 50%;
     color: transparent;
     top: 50%;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
     padding: 0;
     border: none;
     outline: none;
+    z-index: 13;
     &:hover, &:focus {
         outline: none;
-        background: white;
+        background: transparent;
         color: transparent;
         &:before {
             opacity: $slick-opacity-on-hover;
@@ -102,7 +101,7 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-prev {
-    left: -20px;
+    left: -10px;
     [dir="rtl"] & {
         left: auto;
         right: -25px;
@@ -116,7 +115,7 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-next {
-    right: -20px;
+    right: -10px;
     [dir="rtl"] & {
         left: -25px;
         right: auto;
@@ -154,6 +153,7 @@ $slick-opacity-not-active: 0.25 !default;
         cursor: pointer;
         button {
             border: 0;
+            border: none;
             background: transparent;
             display: block;
             height: 20px;

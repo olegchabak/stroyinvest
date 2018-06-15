@@ -10,11 +10,12 @@
 	color: #fff
 
 html
+	margin: 0
+	padding: 0
 	font-size: 10px
 
 body
 	background-color: $body-bg
-	padding-top: 4rem
 	font-size: 1.4rem
 	min-width: 320px
 	position: relative
@@ -22,6 +23,8 @@ body
 	font-family: $default-font
 	overflow-x: hidden
 	color: $text
+	margin: 0
+	padding: 0
 	input, textarea
 		border: #666 1px solid
 		outline: none 
@@ -29,6 +32,8 @@ body
 			border-color: red
 		&:required:valid
 			border-color: green
+	input[type="range"]
+		border: none
 
 .img-responsive
 	display: block
@@ -58,6 +63,8 @@ ul
 
 a
 	color: $accent
+	&:hover, &:focus
+		color: darken($accent, 15%)
 
 h2
 	font-size: 2.4rem
@@ -65,12 +72,14 @@ h2
 
 .btn
 	display: inline-block !important
-	padding: 1.6rem 2.3rem
-	border-radius: 5px
+	padding: 1.2rem 2.5rem
+	border-radius: 3px
 	transition: all .25s ease
 	position: relative
-	font-weight: bold
+	font-weight: 400
 	letter-spacing: .5px
+	text-transform: uppercase
+	font-size: 13px !important
 	&::after
 		content: ''
 		position: absolute
@@ -93,10 +102,14 @@ h2
 .top-nav
 	background-color: #fff
 	padding: 15px
-	margin-bottom: 4rem
+	margin: 4rem 0
 	position: relative
 	.logo
-		max-width: 240px
+		position: relative
+		a
+			display: block
+			img
+				max-width: 250px
 	&_menu
 		list-style-type: none
 		display: flex 
@@ -125,18 +138,18 @@ h2
 				&:hover, &:focus, &.active
 					&::after
 						transform: scale(1)
-						bottom: -28px
+						bottom: -29px
 	.hamburger
 		position: absolute
 		right: 0
-		top: -50px	
+		top: -47px	
 		outline: none !important
 		display: none
 
 .left-sidebar
 	&_btn
-		padding: 2rem 3rem 
-		font-size: 1.6rem
+		padding: 1.5rem 3rem 
+		font-size: 1.5rem
 		background-color: #fff
 		border-bottom: 1px solid $body-bg
 		position: relative
@@ -163,9 +176,6 @@ h2
 		background-color: #fff
 		list-style-type: none
 		font-size: 1.6rem
-		padding: 
-			top: 1.5rem
-			bottom: 1.5rem
 		li
 			background-color: inherit
 			transition: background-color .25s ease
@@ -194,7 +204,7 @@ h2
 				text-decoration: underline
 .content
 	&-btn-box
-		margin-top: 2rem
+		margin-top: 1.5rem
 	.team
 		text-align: center
 		h2
@@ -311,17 +321,13 @@ h2
 							margin-top: -5px
 							transform: rotate(45deg)
 				&_legal
-					font-size: 11px
+					font-size: 10px
 			&-counter
 				h4
 					font-weight: normal
 					font-size: 16px
 				input[type="range"]
-					width: 90%
-				.range-bar
 					margin: 3rem 0
-					.range-quantity
-						background-color: $accent
 				&_invest
 					margin-bottom: 3rem
 					&_label
@@ -359,11 +365,6 @@ h2
 						display: block
 						font-size: 10px
 
-
-
-
-
-
 .directions
 	margin-top: 4rem
 	h2
@@ -379,13 +380,12 @@ h2
 		padding: 2rem 1.5rem
 		margin: 0 1rem
 		outline: none
+		cursor: grab
 		h3
 			color: $accent
 			font-size: 1.4rem
 			font-weight: bold
 .slick-dots li button:before
-	font-size: 5rem
-	content: '.'
 
 .footer
 	background-color: $text

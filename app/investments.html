@@ -27,6 +27,20 @@
 </head>
 
 <body>
+	<!-- Preloader -->
+	<div class="preloader">
+		<div class="cssload-triangles">
+			<div class="cssload-tri cssload-invert"></div>
+			<div class="cssload-tri cssload-invert"></div>
+			<div class="cssload-tri"></div>
+			<div class="cssload-tri cssload-invert"></div>
+			<div class="cssload-tri cssload-invert"></div>
+			<div class="cssload-tri"></div>
+			<div class="cssload-tri cssload-invert"></div>
+			<div class="cssload-tri"></div>
+			<div class="cssload-tri cssload-invert"></div>
+		</div>
+	</div>
 	<div class="container">
 		<div class="top-nav">
 			<div class="row align-items-center">
@@ -164,19 +178,19 @@
 								<div class="col-lg">
 									<div class="investments-calc-counter">
 										<h4>Укажите сумму инвестиций</h4>
-										<input type="text" name="summ" class="calc-range">
+										<input type="range" name="summ" min="100000" max="3000000" step="100000" value="1200000">
 										<div class="investments-calc-counter_invest">
 											<span class="investments-calc-counter_invest_label">Сумма: </span>
-											<span class="investments-calc-counter_invest_num">1 200 000 руб.</span>
+											<span class="investments-calc-counter_invest_num"><span class="insert">1 200 000</span> руб.</span>
 										</div>
 										<!-- /.investments-calc-counter_invest -->
 										<span class="investments-calc-counter_total">
-											<strong>2 351 569 руб.</strong>
-											<small>Сумма через 36 месяцев</small>
+											<strong><span class="insert">2 351 569</span> руб.</strong>
+											<small>Сумма через <span class="insert">6 месяцев</span></small>
 										</span>
 										<!-- /.investments-calc-counter_total -->
 										<span class="investments-calc-counter_monthly">
-											<strong>51 569 руб.</strong>
+											<strong><span class="insert">51 569</span> руб.</strong>
 											<small>Ежемесячный доход</small>
 										</span>
 										<!-- /.investments-calc-counter_total -->
@@ -282,6 +296,36 @@
 	
 
 	<script src="js/scripts.min.js"></script>
+	<script>
+	// **** Calculator ****
+	$('input[name="calc"], input[name="summ"]').on('change', function() {
+		var input = $('input[name="calc"]:checked');
+		var percent = $(input).attr('data-percent');
+		var month = $(input).attr('data-month');
+		var money = $('input[type="range"]').val();
+		var total = 0, monthlyIncome;
+		result = +money 
+		total = +money + money * ((month / 12) * percent);
+		monthlyIncome = Math.round(+money * ((month / 12) * percent) / month);
+		console.log(percent);
+		console.log(month);
+		console.log(total);
+		// вывод суммы вклада
+		$('.investments-calc-counter_invest_num .insert').text((money+'').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
+		//вывод срока вклада
+		if (month < 12) {
+			$('.investments-calc-counter_total small .insert').text(month + ' месяцев');
+		} else if (month == 12) {
+			$('.investments-calc-counter_total small .insert').text((+month / 12) + ' год');
+		} else {
+			$('.investments-calc-counter_total small .insert').text((+month / 12) + ' года');
+		}
+		// вывод конечной суммы
+		$('.investments-calc-counter_total strong .insert').text((total+'').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
+		// вывод ежемесячной прибыли
+		$('.investments-calc-counter_monthly .insert').text((monthlyIncome+'').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
+	});
+	</script>
 
 </body>
 </html>
