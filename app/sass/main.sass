@@ -185,10 +185,11 @@ h2
 				color: $text
 				text-decoration: none
 				transition: color .25s ease
-				&:hover, &:focus
-					color: #fff
-			&:hover, &:focus
+			&:hover, &:focus, &.active
 				background-color: $accent
+				a
+					color: #fff
+			
 	&_object
 		margin-top: 3rem
 		background-color: #fff
@@ -203,6 +204,9 @@ h2
 				display: block
 				text-decoration: underline
 .content
+	h2
+		margin-bottom: 3rem
+		margin-top: 0
 	&-btn-box
 		margin-top: 1.5rem
 	.team
@@ -364,6 +368,41 @@ h2
 					small
 						display: block
 						font-size: 10px
+	.category
+		text-align: center
+		&-img
+		&-content
+			background-color: #fff
+			padding: $gutter
+			margin-bottom: $gutter
+			h3
+				text-align: left
+				font-weight: normal
+			&-description
+				text-align: left
+				margin-bottom: 1.5rem
+			&-price
+				color: $accent
+				font-weight: bold
+				font-size: 18px
+				margin-bottom: 1.5rem
+			&-btn
+				display: block
+				width: 70%
+				margin-bottom: 1.5rem
+			&-podrobnee
+				color: $text
+				text-decoration: underline
+	.object
+		&-gallery
+			display: block
+			width: 50%
+			float: right
+			margin-left: 1.5rem
+		&-btn
+			margin-top: 3rem
+
+
 
 .directions
 	margin-top: 4rem
