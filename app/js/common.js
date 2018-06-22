@@ -50,7 +50,16 @@ $(function() {
 		}
 	]
 	});
+
+	// *** Close modal window ***
+	// $('.closeModal, .modal').on('click', function() {
+	// 	event.preventDefault();
+	// 	$('.modal').fadeOut('slow');
+	// });
 	
+	$(".modal, .closeModal").on('click', function (e) {
+	    if (e.target == this) $(".modal").fadeOut('slow');
+	})
 
 	//*** jQery Equal Heights ***
 	if (screen.width >= 992) {
